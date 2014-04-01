@@ -15,8 +15,8 @@
 	git commit -m "init"
 	heroku create
 	git push heroku master
-	ssh-keygen
-	less /home/knoppix/.ssh/id_rsa.pub
+	ssh-keygen -f ~/.ssh/id_rsa_netkit -C "knoppix@netkit.org-$(date -I)"
+	heroku keys:add /home/knoppix/.ssh/id_rsa_netkit.pub
 	git push heroku master
 	pip install distribute -U
 	pip freeze > requirements.txt
