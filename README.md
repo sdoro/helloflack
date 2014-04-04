@@ -1,15 +1,17 @@
+	# export http_proxy="http://proxy.zuccante.it:8080/"
+	# export https_proxy=$http_proxy
 	heroku login
 	mkdir helloflask
 	cd helloflask
 	virtualenv venv
 	source venv/bin/activate
 	pip install Flask gunicorn
-	vi hello.py
-	vi Procfile
+	nano hello.py
+	nano Procfile
 	foreman start
 	pip freeze > requirements.txt
 	cat requirements.txt 
-	vi .gitignore
+	nano .gitignore
 	git init
 	git add .
 	git commit -m "init"
